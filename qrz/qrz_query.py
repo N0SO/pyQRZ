@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 # coding:utf-8
 
-import os
+import os, sys
 import requests
 import xmltodict
-from ConfigParser import SafeConfigParser
+python_version = sys.version_info[0]
+if (python_version == 2):
+    from ConfigParser import SafeConfigParser
+else:
+    from configparser import SafeConfigParser
 
 
 class QRZerror(Exception):
